@@ -4,11 +4,11 @@
 
 To create a 'light' version of the Moneybox app that will allow existing users to login and check their account balance as well as viewing their moneybox savings.
 
-### The app should have at the very least...
+### The app should have
 - A login screen to allow existing users to login
 - A screen to show the accounts the user holds, e.g. ISA, GIA
 - A screen to show some detail of the account, including a simple button to add money to their moneybox.
-  - The button should be add a fixed amount of say £10. It should use the `POST /oneoffpayments` endpoint (described below) and their Moneybox amount would be updated.
+  - The button should be add a fixed amount of say Â£10. It should use the `POST /oneoffpayments` endpoint (described below) and their Moneybox amount would be updated.
 - A user should be able to navigate back and forth between screens.
 
 A prototype wireframe is provided below and can be used as a guideline. You are free to change any elements of the screen and provide additional information if you wish.
@@ -17,7 +17,7 @@ A prototype wireframe is provided below and can be used as a guideline. You are 
 
 ##### What we are looking for:
  - Demonstration of coding style, conventions, structure and use of any 3rd party libraries.
- - Any form of unit or integration testing would be a bonus.
+ - Any form of unit testing would be a bonus.
  - The application must run on iOS 10 or later.
  - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator
 
