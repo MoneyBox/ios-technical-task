@@ -11,10 +11,6 @@ To create a 'light' version of the Moneybox app that will allow existing users t
   - The button should be add a fixed amount of say £10. It should use the `POST /oneoffpayments` endpoint (described below) and their Moneybox amount would be updated.
 - A user should be able to navigate back and forth between screens.
 
-A prototype wireframe is provided below and can be used as a guideline. You are free to change any elements of the screen and provide additional information if you wish.
-
-![](https://s3.amazonaws.com/uploads.hipchat.com/402730/2470705/6JJwTcVMpFzsqba/ios%20wireframe.png)
-
 ##### What we are looking for:
  - Demonstration of coding style, conventions, structure and use of any 3rd party libraries.
  - Any form of unit testing would be a bonus.
