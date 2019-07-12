@@ -12,7 +12,7 @@ To create a 'light' version of the Moneybox app that will allow existing users t
 - A user should be able to navigate back and forth between screens.
 
 A prototype wireframe of all 3 screens is provided as a guideline. You are free to change any elements of the screen and provide additional information if you wish.
-![](/images/wireframe.png)
+![](wireframe.png)
 
 ##### What we are looking for:
  - Demonstration of coding style, conventions, structure and use of any 3rd party libraries.
