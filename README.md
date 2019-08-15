@@ -17,7 +17,7 @@ A prototype wireframe of all 3 screens is provided as a guideline. You are free 
 ##### What we are looking for:
  - Demonstration of coding style, conventions, structure and use of any 3rd party libraries.
  - Any form of unit testing would be a bonus.
- - The application must run on iOS 10 or later.
+ - The application must run on iOS 11 or later.
  - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator
 
 ##### How to Submit your solution:
@@ -36,177 +36,56 @@ You can log into test your app using the following user:
 | androidtest@moneyboxapp.com  | P455word12  |
 
 #### Headers
+
 In order to make requests https must be used and the following headers must be included in each request.
 
 |  Key | Value |
 | ------------- | ------------- |
-| AppId  | 8cb2237d0679ca88db6464  |
+| AppId  | 3a97b932a9d449c981b595  |
 | Content-Type  | application/json  |
-| appVersion | 4.0.0 |
+| appVersion | 5.10.0 |
 | apiVersion | 3.0.0 |
 
-### Authentication
-After obtaining a bearer token via `POST /users/login` (sample json response below), an Authorization header must be provided for all other endpoints.
-Note: The BearerToken has a sliding expiration of 5 mins.
+#### Authentication
+To login with this user to retrieve a bearer token you need to call `POST /users/login`.
+```
+POST /users/login
+{
+  "Email": "androidtest@moneyboxapp.com",
+  "Password": "P455word12",
+  "Idfa": "ANYTHING"
+}
+```
+Sample json response
 ```
 "Session": {
         "BearerToken": "TsMWRkbrcu3NGrpf84gi2+pg0iOMVymyKklmkY0oI84=",
-        "ExternalSessionId": "4ff0eab7-7d3f-40c5-b87b-68d4a4961983", -- not used, obsolete
-        "SessionExternalId": "4ff0eab7-7d3f-40c5-b87b-68d4a4961983", -- not used, obsolete
-        "ExpiryInSeconds": 0 -- not used, obsolete
+        "ExternalSessionId": "4ff0eab7-7d3f-40c5-b87b-68d4a4961983", -- not used
+        "SessionExternalId": "4ff0eab7-7d3f-40c5-b87b-68d4a4961983", -- not used
+        "ExpiryInSeconds": 0 -- not used
     }
 ```
-
-Authorization Header to be used
+After obtaining a bearer token an Authorization header must be provided for all other endpoints along with the headers listed above (Note: The BearerToken has a sliding expiration of 5 mins).
 
 |  Key          | Value         |
 | ------------- | ------------- |
 | Authorization  | Bearer TsMWRkbrcu3NGrpf84gi2+pg0iOMVymyKklmkY0oI84=  |
 
-
-### API Endpoints
-#### Login
-Logs in an existing user
+#### Investor Products
+Provides product and account information for a user that will be needed for the two additional screens.
 ```
-POST /users/login
-{
-  "Email": "testing@moneyboxapp.com",
-  "Password": "supersafepassword1234",
-  "Idfa": "the idfa of the ios device"
-}
+GET /investorproducts
 ```
-Sample json response - has been trimmed down, and below are the core properties that are of use.
-```
-{
-    "User": {
-        "UserId": "74d21315-538e-4abc-a4a8-38cb0291216f",
-        "HasVerifiedEmail": true,
-        "IsPinSet": true,
-        "RegistrationStatus": "IsComplete",
-        "DateCreated": "2017-11-17T10:19:06.537",
-        "MoneyboxRegistrationStatus": "IsComplete",
-        "Email": "test+sample@moneyboxapp.com",
-        "FirstName": "Sample",
-        "LastName": "User",
-    },
-    "Session": {
-        "BearerToken": "Kcuf/DOjXgwDioE6wOdM1XyR/+ncwzdT0N9bJjl+O6g=", ----------> This is used for authentication
-        "ExternalSessionId": "0f1ae000-9eda-4f59-ad78-5773b9d71315", ----------> not used, obsolete
-        "SessionExternalId": "0f1ae000-9eda-4f59-ad78-5773b9d71315", ----------> not used, obsolete
-        "ExpiryInSeconds": 0 ----------> not used, obsolete
-    }
-}
-```
-
-### Logout
-Ends the current session for the user
-```
-POST users/logout
-```
-
-#### This Week
-Provides product and account information for a user. There are alot of properties, however, some notes have been used to describe some properties that you may want to use.
-```
-GET /investorproduct/thisweek
-```
-
-Sample json response
-```
-{
-    "Products": [
-        {
-            "InvestorProductId": 3229,
-            "InvestorProductType": "Isa",
-            "ProductId": 1,
-            "Moneybox": 130,  ----------> How much the user has saved this week so far and is the users 'Moneybox'
-            "PreviousMoneybox": 130, ----------> not used, obsolete
-            "SubscriptionAmount": 30,  ----------> What the current weekly subscription is set to
-            "PlanValue": 5235,  ----------> The current account balance
-            "Sytd": 1235,  ----------> How much the user has contributed in the current tax year
-            "TransferInSytd": 4000,  ----------> The amount the user has transfered from another provider
-            "MaximumWithdrawal": 0,
-            "MaximumDeposit": 14765,  ----------> The remaining amount that can be contributed to the current tax year
-            "TotalContributions": 0,
-            "TotalReturnValue": 0,
-            "TotalReturnPercentage": 0,
-            "CashInTransit": 0,
-            "ResidualCash": 0,
-            "TotalFees": 0,
-            "TotalReturnValueGross": 0,
-            "PendingWithdrawal": 0,
-            "IsPendingRebalance": false,
-            "PendingDeposit": 0,
-            "Product": {
-                "Name": "ISA",
-                "Type": "Isa",
-                "AnnualLimit": 20000,
-                "DepositLimit": 0,
-                "FriendlyName": "Stocks & Shares ISA"  
-            },
-            "DateModified": "2017-11-17T10:21:10.437",
-            "Valuations": [],
-            "IsSelected": true,
-            "IsFavourite": true
-        },
-        {
-            "InvestorProductId": 3230,
-            "InvestorProductType": "Gia",
-            "ProductId": 2,
-            "Moneybox": 20,
-            "PreviousMoneybox": 20,
-            "SubscriptionAmount": 50,
-            "PlanValue": 2000,
-            "Sytd": 2000,
-            "TransferInSytd": 0,
-            "MaximumWithdrawal": 0,
-            "MaximumDeposit": 20000,
-            "TotalContributions": 0,
-            "TotalReturnValue": 0,
-            "TotalReturnPercentage": 0,
-            "CashInTransit": 0,
-            "ResidualCash": 0,
-            "TotalFees": 0,
-            "TotalReturnValueGross": 0,
-            "PendingWithdrawal": 0,
-            "IsPendingRebalance": false,
-            "PendingDeposit": 0,
-            "Product": {
-                "Name": "GIA",
-                "Type": "Gia",
-                "AnnualLimit": 0,
-                "DepositLimit": 20000,
-                "FriendlyName": "General Investment Account"
-            },
-            "DateModified": "2017-11-17T10:21:48.650",
-            "Valuations": [],
-            "IsSelected": false,
-            "IsFavourite": false
-        }
-    ],
-    "SelectedInvestorProductId": 3229,
-    "FavouriteInvestorProductId": 3229,
-    "Transactions": [],
-    "Links": []
-}
-}
-```
-
 ### One off payments
 Adds a one off amount to the users moneybox.
 ```
 POST /oneoffpayments
 {
   "Amount": 20,
-  "InvestorProductId": 3230 ------> The InvestorProductId from investorproduct/thisweek endpoint
+  "InvestorProductId": 3230 ------> The InvestorProductId from /investorproducts endpoint
 }
 ```
-
-Sample json response
-```
-{
-  "Moneybox": 20
-}
-```
+Good luck!
 
 
 
