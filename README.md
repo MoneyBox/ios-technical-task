@@ -21,7 +21,7 @@ A prototype wireframe of all 3 screens is provided as a guideline. You are free 
  - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator
 
 ##### How to Submit your solution:
- - Create a public repo in github, bitbucket or a suitable alternative and provide a link to the repository.
+ - Zip up your solution, excluding any build artifacts to reduce the size, and email it back to our recruitment team.
  - (Optional) Provide a readme in markdown which details the app that you have created and any necessary steps in order to launch or run the solution.
 
 ### API Usage
