@@ -28,12 +28,12 @@ A prototype wireframe of all 3 screens is provided as a guideline. You are free 
 This a brief summary of api endpoints of the moneybox sandbox environment. There a lot of other additional properties from the json responses that are either not relevant to this technical task and some are marked as obsolete. You are free to use any information and you will not be penalised for misinterpreting  the information used.
 
 #### Base URL & Test User
-The base URL for the moneybox sandbox environment is `https://api-test01.moneyboxapp.com/`.
+The base URL for the moneybox sandbox environment is `https://api-test02.moneyboxapp.com/`.
 You can log into test your app using the following user:
 
 |  Username          | Password         |
 | ------------- | ------------- |
-| androidtest@moneyboxapp.com  | P455word12  |
+| test+ios@moneyboxapp.com  | P455word12  |
 
 #### Headers
 
@@ -43,7 +43,7 @@ In order to make requests https must be used and the following headers must be i
 | ------------- | ------------- |
 | AppId  | 3a97b932a9d449c981b595  |
 | Content-Type  | application/json  |
-| appVersion | 5.10.0 |
+| appVersion | 7.10.0 |
 | apiVersion | 3.0.0 |
 
 #### Authentication
