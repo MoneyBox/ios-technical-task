@@ -18,10 +18,10 @@ A prototype wireframe of all 3 screens is provided as a guideline. You are free 
  - Demonstration of coding style, conventions, structure and use of any 3rd party libraries.
  - Any form of unit testing would be a bonus.
  - The application must run on iOS 11 or later.
- - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator
+ - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator.
 
 ##### How to Submit your solution:
- - Zip up your solution, excluding any build artifacts to reduce the size, and email it back to our recruitment team.
+ - To provide a link of the Github repository where you have implemented the solution.
  - (Optional) Provide a readme in markdown which details the app that you have created and any necessary steps in order to launch or run the solution.
 
 ### API Usage
