@@ -41,7 +41,7 @@ In order to make requests https must be used and the following headers must be i
 
 |  Key | Value |
 | ------------- | ------------- |
-| AppId  | 3a97b932a9d449c981b595  |
+| AppId  | 8cb2237d0679ca88db6464  |
 | Content-Type  | application/json  |
 | appVersion | 7.10.0 |
 | apiVersion | 3.0.0 |
