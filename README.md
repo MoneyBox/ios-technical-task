@@ -2,14 +2,15 @@
 
 ## The Brief:
 
-To create a 'light' version of the Moneybox app that will allow existing users to login and check their account balance as well as viewing their moneybox savings.
+To create a 'light' version of the Moneybox app that will allow existing users to login and check their account balance, as well as viewing their Moneybox savings. The text should not take more than 3 hours to be completed. If within the 3 hours, there is an optional screen to be implemented.
 
 ### The app should have
 - A login screen to allow existing users to login
 - A screen to show the accounts the user holds, e.g. ISA, GIA
+
+### Optional
 - A screen to show some detail of the account, including a simple button to add money to their moneybox.
   - The button should be add a fixed amount of say £10. It should use the `POST /oneoffpayments` endpoint (described below) and their Moneybox amount would be updated.
-- A user should be able to navigate back and forth between screens.
 
 A prototype wireframe of all 3 screens is provided as a guideline. You are free to change any elements of the screen and provide additional information if you wish.
 ![](wireframe.png)
