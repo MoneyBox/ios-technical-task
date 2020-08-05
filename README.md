@@ -51,7 +51,7 @@ To login with this user to retrieve a bearer token you need to call `POST /users
 ```
 POST /users/login
 {
-  "Email": "androidtest@moneyboxapp.com",
+  "Email": "test+ios@moneyboxapp.com",
   "Password": "P455word12",
   "Idfa": "ANYTHING"
 }
