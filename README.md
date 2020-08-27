@@ -17,6 +17,7 @@ A prototype wireframe of all 3 screens is provided as a guideline. You are free 
 
 ##### What we are looking for:
  - Demonstration of coding style, conventions, structure and use of any 3rd party libraries.
+ - Use of storyboards and autolayout.
  - Any form of unit testing would be a bonus.
  - The application must run on iOS 11 or later.
  - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator.
