@@ -12,7 +12,7 @@ To create a 'light' version of the Moneybox app that will allow existing users t
 - A screen to show some detail of the account, including a simple button to add money to their moneybox.
 - The button should be add a fixed amount of say £10. It should use the `POST /oneoffpayments` endpoint (described below) and their Moneybox amount would be updated.
 
-A prototype wireframe of all 3 screens is provided as a guideline. You are free to change any elements of the screen and provide additional information if you wish.
+A prototype wireframe of all 3 screens is provided as a guideline. You are free to provide additional information if you wish.
 ![](wireframe.png)
 
 ##### What we are looking for:
